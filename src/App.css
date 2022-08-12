@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+  background: #141c2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 500px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .modeToggle {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.searchField {
+  display: flex;
+  align-items: center;
+  background: #1f2a48;
+  border-radius: 6px;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.searchField input {
+  background: transparent;
+  color: white;
+  outline: none;
+  border: none;
+  height: 3rem;
+  font-size: 2rem;
+  padding-left: 2rem;
+}
+
+/* Search Btn */
+.searchField .btn {
+  padding: 0.5rem 1rem;
+  background: #0079fe;
+  color: white;
+  border-radius: 6px;
+  border: none;
+}
+.searchField .btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.searchField .btn:active {
+  transform: scale(1);
+}
+
+/* changes color of placeholder text  */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #c5ccdb;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #1f2a48;
+  border-radius: 6px;
+  padding-inline: 1rem;
+}
+
+.card .cardHeader {
+  display: flex;
+  align-items: center;
+}
+
+.card .imgContainer img {
+  border-radius: 50%;
+}
+
+.card .userGreeting {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card .stats {
+  display: flex;
+  justify-content: space-evenly;
+  background: #141c2f;
+  width: 95%;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.card .stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .stat h4 {
+  color: #c5ccdb;
+  margin-bottom: 0.5rem;
 }
