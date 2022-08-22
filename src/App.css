@@ -87,10 +87,13 @@ header .modeToggle {
 .card .cardHeader {
   display: flex;
   align-items: center;
+  margin-block: 1rem;
 }
 
 .card .imgContainer img {
   border-radius: 50%;
+  width: 50%;
+  height: auto;
 }
 
 .card .userGreeting {

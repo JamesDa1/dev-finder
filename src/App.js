@@ -3,15 +3,16 @@ import { useState, useEffect } from "react"
 import { Octokit } from "@octokit/core"
 import axios from "axios"
 
-const ACCESS_TOKEN = "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"
+const ACCESS_TOKEN = "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"
 const octokit = new Octokit({ auth: ACCESS_TOKEN })
-const username = "JamesDa1"
+// const username = "JamesDa1"
 
 function App() {
   const [query, setQuery] = useState("")
   const [data, setData] = useState({})
 
-  const fetchData = async () => {
+  const fetchData = async (query) => {
+    const username = query || "Jamesda1"
     const response = await octokit.request(`GET /users/{username}`, {
       username: username,
     })
@@ -47,7 +48,7 @@ function App() {
         <button
           className="btn"
           onClick={() => {
-            console.log(query)
+            fetchData(query)
           }}
         >
           Search
@@ -61,7 +62,7 @@ function App() {
           </div>
           <div className="userInfo">
             <h3 className="userName">{data.login}</h3>
-            <p>@TheRanger</p>
+            <p>@{data.login}</p>
             <p>Joined 25 Jan 2011</p>
           </div>
         </div>
