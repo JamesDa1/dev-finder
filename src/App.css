@@ -82,6 +82,7 @@ header .modeToggle {
   background: #1f2a48;
   border-radius: 6px;
   padding-inline: 1rem;
+  cursor: pointer;
 }
 
 .card .cardHeader {

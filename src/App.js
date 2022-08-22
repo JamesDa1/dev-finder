@@ -1,11 +1,9 @@
 import "./App.css"
 import { useState, useEffect } from "react"
 import { Octokit } from "@octokit/core"
-import axios from "axios"
 
 const ACCESS_TOKEN = "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"
 const octokit = new Octokit({ auth: ACCESS_TOKEN })
-// const username = "JamesDa1"
 
 function App() {
   const [query, setQuery] = useState("")
@@ -16,13 +14,17 @@ function App() {
     const response = await octokit.request(`GET /users/{username}`, {
       username: username,
     })
-    setData(response.data)
-    console.log(data)
-    console.log(typeof data.created_at, data.created_at)
+
+    const dateYear = response.data.created_at.substring(0, 4)
+    const dateMonth = response.data.created_at.substring(5, 7)
+    const dateDay = response.data.created_at.substring(8, 10)
+    const newDate = `${dateDay}/${dateMonth}/${dateYear}`
+    setData({ ...response.data, created_at: newDate })
   }
 
   useEffect(() => {
     fetchData()
+    // console.log(data)
   }, [])
 
   return (
@@ -41,6 +43,11 @@ function App() {
           name=""
           id="search"
           placeholder="Search Github username"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              fetchData(query)
+            }
+          }}
           onChange={(e) => {
             setQuery(e.target.value)
           }}
@@ -55,7 +62,12 @@ function App() {
         </button>
       </section>
 
-      <section className="card">
+      <section
+        className="card"
+        onClick={() => {
+          window.open(data.html_url, "_blank")
+        }}
+      >
         <div className="cardHeader">
           <div className="imgContainer">
             <img src={data.avatar_url} alt="avatar" />
@@ -63,7 +75,7 @@ function App() {
           <div className="userInfo">
             <h3 className="userName">{data.login}</h3>
             <p>@{data.login}</p>
-            <p>Joined 25 Jan 2011</p>
+            <p>Joined {data.created_at}</p>
           </div>
         </div>
         <p className="userGreeting">
