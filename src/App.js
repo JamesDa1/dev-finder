@@ -2,7 +2,7 @@ import "./App.css"
 import { useState, useEffect } from "react"
 import { Octokit } from "@octokit/core"
 
-const ACCESS_TOKEN = "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"
+const ACCESS_TOKEN = process.env.REACT_APP_MT_API_KEY
 const octokit = new Octokit({ auth: ACCESS_TOKEN })
 
 function App() {
