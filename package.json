@@ -1,5 +1,6 @@
 {
   "name": "dev-finder",
+  "homepage": "https://JamesDa1.github.io/dev-finder",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
