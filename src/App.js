@@ -31,7 +31,6 @@ function App() {
     <div className="App">
       <header>
         <h1>devFinder</h1>
-        {/* <div className="modeToggle"></div> */}
       </header>
       <section className="searchField">
         <label htmlFor="search"></label>
