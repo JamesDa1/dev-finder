@@ -31,10 +31,7 @@ function App() {
     <div className="App">
       <header>
         <h1>devFinder</h1>
-        <div className="modeToggle">
-          <p>light</p>
-          <p>Icon</p>
-        </div>
+        {/* <div className="modeToggle"></div> */}
       </header>
       <section className="searchField">
         <label htmlFor="search"></label>
