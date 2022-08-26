@@ -1,4 +1,5 @@
-import "./App.css"
+// import "./App.css"
+import "./styles.css"
 import { useState, useEffect } from "react"
 import { Octokit } from "@octokit/core"
 
@@ -38,7 +39,7 @@ function App() {
           type="text"
           name=""
           id="search"
-          placeholder="Search Github username"
+          placeholder="Github user"
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               fetchData(query)
