@@ -16,7 +16,7 @@ body {
 .App {
   margin: 0 auto;
   text-align: center;
-  width: 95%;
+  max-width: 500px;
 }
 
 header {
@@ -29,6 +29,49 @@ header .modeToggle {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.searchField {
+  display: flex;
+  align-items: center;
+  background: #1f2a48;
+  border-radius: 6px;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.searchField input {
+  background: transparent;
+  color: white;
+  outline: none;
+  border: none;
+  height: 3rem;
+  font-size: 2rem;
+  padding-left: 2rem;
+}
+
+/* Search Btn */
+.searchField .btn {
+  padding: 0.5rem 1rem;
+  background: #0079fe;
+  color: white;
+  border-radius: 6px;
+  border: none;
+}
+.searchField .btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.searchField .btn:active {
+  transform: scale(1);
+}
+
+/* changes color of placeholder text  */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #c5ccdb;
 }
 
 .card {
@@ -59,8 +102,22 @@ header .modeToggle {
   margin-bottom: 1rem;
 }
 
-@media screen and (max-width: 768px) {
-  .App {
-    width: 300px;
-  }
+.card .stats {
+  display: flex;
+  justify-content: space-evenly;
+  background: #141c2f;
+  width: 95%;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.card .stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .stat h4 {
+  color: #c5ccdb;
+  margin-bottom: 0.5rem;
 }
